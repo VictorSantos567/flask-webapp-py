@@ -15,8 +15,8 @@ jogo_dois = Jogo("LOL", "MOBA", "PC")
 lista = [jogo_um, jogo_dois]
 
 
-@app.route("/inicio")
-def ola():
+@app.route("/")
+def index():
     return render_template("index.html", titulo="Jogos", jogos=lista)
 
 
@@ -40,4 +40,4 @@ def criar():
     return render_template("index.html", titulo="Jogos", jogos=lista)
 
 
-app.run()
+app.run(debug=True)
