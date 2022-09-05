@@ -4,19 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Jogoteca</title>
+    <link rel="stylesheet" href="../static/bootstrap.css" />
   </head>
   <body>
-    <table>
+    <table class="table">
       <thead>
         <tr>
-          <td>Nome</td>
-          <td>Categoria</td>
-          <td>Console</td>
+          <th>Nome</th>
+          <th>Categoria</th>
+          <th>Console</th>
         </tr>
       </thead>
-      <h1>{{titulo}}</h1>
       <tbody>
+        <h1>{{titulo}}</h1>
         {% for jogos in jogos%}
         <tr>
           <td>{{jogos.nome}}</td>
