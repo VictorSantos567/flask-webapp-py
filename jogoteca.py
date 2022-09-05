@@ -10,29 +10,34 @@ class Jogo:
         self.console = console
 
 
-jogo_um = Jogo('havest moon', 'fazenda', 'PS1')
-jogo_dois = Jogo('LOL', 'MOBA', 'PC')
+jogo_um = Jogo("havest moon", "fazenda", "PS1")
+jogo_dois = Jogo("LOL", "MOBA", "PC")
 lista = [jogo_um, jogo_dois]
 
 
-@app.route('/inicio')
+@app.route("/inicio")
 def ola():
-    return render_template('index.html', titulo='Jogos', jogos=lista)
+    return render_template("index.html", titulo="Jogos", jogos=lista)
 
 
-@app.route('/novo')
+@app.route("/novo")
 def novo():
-    return render_template('novo.html', titulo='Novo Jogo')
+    return render_template("novo.html", titulo="Novo Jogo")
 
 
-@app.route('/criar')
+@app.route(
+    "/criar",
+    methods=[
+        "POST",
+    ],
+)
 def criar():
-    nome = request.form(nome)
-    categoria = request.form(categoria)
-    console = request.form(console)
+    nome = request.form["nome"]
+    categoria = request.form["categoria"]
+    console = request.form["console"]
     jogo = Jogo(nome, categoria, console)
     lista.append(jogo)
-    return render_template('index.html', titulo='Jogos')
+    return render_template("index.html", titulo="Jogos", jogos=lista)
 
 
 app.run()
