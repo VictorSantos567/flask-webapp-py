@@ -1,31 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jogoteca</title>
-    <link rel="stylesheet" href="../static/bootstrap.css" />
-  </head>
-  <body>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Categoria</th>
-          <th>Console</th>
-        </tr>
-      </thead>
-      <tbody>
-        <h1>{{titulo}}</h1>
-        {% for jogos in jogos%}
-        <tr>
-          <td>{{jogos.nome}}</td>
-          <td>{{jogos.estilo}}</td>
-          <td>{{jogos.console}}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </body>
-</html>
+{% extends 'template.html' %} {%block conteudo%}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Categoria</th>
+      <th>Console</th>
+    </tr>
+  </thead>
+  <tbody>
+    <h1>{{titulo}}</h1>
+    {% for jogos in jogos%}
+    <tr>
+      <td>{{jogos.nome}}</td>
+      <td>{{jogos.estilo}}</td>
+      <td>{{jogos.console}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
