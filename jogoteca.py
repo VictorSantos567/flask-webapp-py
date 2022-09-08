@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session, flash
 
 app = Flask(__name__)
+app.secret_key = "alura"
 
 
 class Jogo:
@@ -53,8 +54,11 @@ def login():
 )
 def autenticar():
     if "alohomora" == request.form["senha"]:
+        session["usuario_logado"] = request.form["login"]
+        flash(session["usuario_logado"] + "está logado corretamente.")
         return redirect("/")
     else:
+        flash("Usuário digitou nome ou senha incorretamente")
         return redirect("/login")
 
 
