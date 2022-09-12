@@ -1,7 +1,9 @@
 {% extends 'template.html' %}{%block conteudo%}
 <body>
   <h1>{{titulo}}</h1>
-  <form action="/autenticar" method="post">
+
+  <form method="POST" action="/autenticar">
+    <input type="hidden" name="proxima" value="{{proxima}}" />
     <label for="login">Login:</label>
     <input type="text" id="login" name="login" /><br />
     <label for="senha">Senha:</label>
