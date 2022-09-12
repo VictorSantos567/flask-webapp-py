@@ -2,7 +2,7 @@
 <body>
   <h1>{{titulo}}</h1>
 
-  <form method="POST" action="/autenticar">
+  <form method="POST" action="{{ url_for('autenticar') }}">
     <input type="hidden" name="proxima" value="{{proxima}}" />
     <label for="login">Login:</label>
     <input type="text" id="login" name="login" /><br />
